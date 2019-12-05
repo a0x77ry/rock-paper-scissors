@@ -68,16 +68,8 @@
 
             for (let i = 0; i < numberOfRounds; i++) {
                 let playerResponse;
-/*                 while (true) {
-                    playerResponse = prompt("Choose rock, paper or scissors").toLowerCase();
-                    if ((playerResponse.indexOf("rock") == -1) && (playerResponse.indexOf("paper") == -1) && (playerResponse.indexOf("scissors") == -1)) {
-                        continue;
-                    } else {
-                        break;
-                    }
-                } */
-
                 let promptExp;
+                
                 while (!promptExp) {
                     playerResponse = prompt("Choose rock, paper or scissors");
                     promptExp = /^(rock|paper|scissors)$/.exec(playerResponse);
