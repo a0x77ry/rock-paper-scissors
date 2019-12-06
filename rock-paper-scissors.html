@@ -68,17 +68,14 @@
 
             for (let i = 0; i < numberOfRounds; i++) {
                 let playerResponse;
-                let promptExp;
                 
-                while (!promptExp) {
+                while (!isValidResponse(playerResponse)) {
                     playerResponse = prompt("Choose rock, paper or scissors");
-                    promptExp = /^(rock|paper|scissors)$/.exec(playerResponse);
                 }
 
                 let computerResponse = computerPlay();
 
                 let winner = playRound(playerResponse, computerResponse);
-
                 if (winner === "player") {
                     playerScore++;
                 } else if (winner === "computer") {
@@ -101,6 +98,10 @@
             }
 
             console.log("The final winner is: " + finalWinner);
+        }
+
+        function isValidResponse(response) {
+            return /^(rock|paper|scissors)$/i.test(response)
         }
 
         function getRandomNumber(min, max) {
